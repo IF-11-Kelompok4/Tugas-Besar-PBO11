@@ -27,6 +27,7 @@ public class GUIAbout extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         Picture_1 = new javax.swing.JLabel();
@@ -36,16 +37,25 @@ public class GUIAbout extends javax.swing.JFrame {
         Picture_3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mbProfil = new javax.swing.JMenu();
+        mbAkun = new javax.swing.JMenuItem();
+        mbKeluar1 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        mbWarga = new javax.swing.JMenuItem();
+        mbPengeluaran = new javax.swing.JMenuItem();
+        mbLap1 = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(224, 130, 131));
+        jPanel4.setBackground(new java.awt.Color(153, 255, 153));
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(246, 36, 89));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Picture_1.setText("Picture 1");
@@ -69,7 +79,7 @@ public class GUIAbout extends javax.swing.JFrame {
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 61, -1, 240));
 
-        jPanel2.setBackground(new java.awt.Color(246, 36, 89));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Picture_2.setText("Picture 2");
@@ -93,7 +103,7 @@ public class GUIAbout extends javax.swing.JFrame {
 
         jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, 240));
 
-        jPanel3.setBackground(new java.awt.Color(246, 36, 89));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 0));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Picture_3.setText("Picture 3");
@@ -121,15 +131,100 @@ public class GUIAbout extends javax.swing.JFrame {
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 17, 52, -1));
 
         jLabel2.setText("Version release");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 330, -1, -1));
-
-        jButton1.setText("Back");
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 322, 80, -1));
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -1, 540, 360));
 
+        mbProfil.setText("Profil");
+
+        mbAkun.setText("Ubah Akun");
+        mbAkun.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mbAkunMouseClicked(evt);
+            }
+        });
+        mbAkun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbAkunActionPerformed(evt);
+            }
+        });
+        mbProfil.add(mbAkun);
+
+        mbKeluar1.setText("Keluar");
+        mbKeluar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbKeluar1ActionPerformed(evt);
+            }
+        });
+        mbProfil.add(mbKeluar1);
+
+        jMenuBar1.add(mbProfil);
+
+        jMenu7.setText("Menu");
+
+        mbWarga.setText("Warga");
+        mbWarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbWargaActionPerformed(evt);
+            }
+        });
+        jMenu7.add(mbWarga);
+
+        mbPengeluaran.setText("Pengeluaran");
+        mbPengeluaran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbPengeluaranActionPerformed(evt);
+            }
+        });
+        jMenu7.add(mbPengeluaran);
+
+        mbLap1.setText("Laporan A/T");
+        mbLap1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbLap1ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(mbLap1);
+
+        jMenuBar1.add(jMenu7);
+
+        setJMenuBar(jMenuBar1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mbAkunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mbAkunMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mbAkunMouseClicked
+
+    private void mbAkunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbAkunActionPerformed
+        // TODO add your handling code here:
+        new ViewKas.GUIAreaBendahara().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbAkunActionPerformed
+
+    private void mbKeluar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbKeluar1ActionPerformed
+        // TODO add your handling code here:
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbKeluar1ActionPerformed
+
+    private void mbWargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbWargaActionPerformed
+        new viewKas.FormDataWarga().setVisible(true);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_mbWargaActionPerformed
+
+    private void mbPengeluaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbPengeluaranActionPerformed
+        new viewKas.FormDataPengeluaran().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mbPengeluaranActionPerformed
+
+    private void mbLap1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbLap1ActionPerformed
+        // TODO add your handling code here:
+        new viewKas.FormDataLaporan().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbLap1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,12 +265,20 @@ public class GUIAbout extends javax.swing.JFrame {
     private javax.swing.JLabel Picture_1;
     private javax.swing.JLabel Picture_2;
     private javax.swing.JLabel Picture_3;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JMenuItem mbAkun;
+    private javax.swing.JMenuItem mbKeluar1;
+    private javax.swing.JMenuItem mbLap1;
+    private javax.swing.JMenuItem mbPengeluaran;
+    private javax.swing.JMenu mbProfil;
+    private javax.swing.JMenuItem mbWarga;
     // End of variables declaration//GEN-END:variables
 }

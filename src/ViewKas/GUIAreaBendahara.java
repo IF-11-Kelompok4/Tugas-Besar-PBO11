@@ -40,10 +40,22 @@ public class GUIAreaBendahara extends javax.swing.JFrame {
         password_lama = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mbProfil = new javax.swing.JMenu();
+        mbAkun = new javax.swing.JMenuItem();
+        mbKeluar1 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        mbWarga = new javax.swing.JMenuItem();
+        mbPengeluaran = new javax.swing.JMenuItem();
+        mbLap1 = new javax.swing.JMenuItem();
+        mbAbout1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel2.setForeground(new java.awt.Color(51, 153, 0));
 
         jLabel1.setText("Username Baru");
 
@@ -95,6 +107,8 @@ public class GUIAreaBendahara extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 250, 350));
 
+        jPanel3.setBackground(new java.awt.Color(51, 204, 0));
+
         password_lama.setText("jPasswordField1");
 
         jLabel3.setText("Username lama");
@@ -130,6 +144,69 @@ public class GUIAreaBendahara extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 350));
 
+        mbProfil.setText("Profil");
+
+        mbAkun.setText("Ubah Akun");
+        mbAkun.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mbAkunMouseClicked(evt);
+            }
+        });
+        mbAkun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbAkunActionPerformed(evt);
+            }
+        });
+        mbProfil.add(mbAkun);
+
+        mbKeluar1.setText("Keluar");
+        mbKeluar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbKeluar1ActionPerformed(evt);
+            }
+        });
+        mbProfil.add(mbKeluar1);
+
+        jMenuBar1.add(mbProfil);
+
+        jMenu5.setText("Menu");
+
+        mbWarga.setText("Warga");
+        mbWarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbWargaActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mbWarga);
+
+        mbPengeluaran.setText("Pengeluaran");
+        mbPengeluaran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbPengeluaranActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mbPengeluaran);
+
+        mbLap1.setText("Laporan A/T");
+        mbLap1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbLap1ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mbLap1);
+
+        jMenuBar1.add(jMenu5);
+
+        mbAbout1.setText("About");
+        mbAbout1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mbAbout1MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(mbAbout1);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -143,6 +220,45 @@ public class GUIAreaBendahara extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mbAbout1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mbAbout1MouseClicked
+        // TODO add your handling code here:
+        new ViewKas.GUIAbout().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbAbout1MouseClicked
+
+    private void mbAkunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mbAkunMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mbAkunMouseClicked
+
+    private void mbAkunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbAkunActionPerformed
+        // TODO add your handling code here:
+        new ViewKas.GUIAreaBendahara().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbAkunActionPerformed
+
+    private void mbKeluar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbKeluar1ActionPerformed
+        // TODO add your handling code here:
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbKeluar1ActionPerformed
+
+    private void mbWargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbWargaActionPerformed
+        new FormDataWarga().setVisible(true);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_mbWargaActionPerformed
+
+    private void mbPengeluaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbPengeluaranActionPerformed
+        new FormDataPengeluaran().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mbPengeluaranActionPerformed
+
+    private void mbLap1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbLap1ActionPerformed
+        // TODO add your handling code here:
+        new FormDataLaporan().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbLap1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,9 +302,18 @@ public class GUIAreaBendahara extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JMenu mbAbout1;
+    private javax.swing.JMenuItem mbAkun;
+    private javax.swing.JMenuItem mbKeluar1;
+    private javax.swing.JMenuItem mbLap1;
+    private javax.swing.JMenuItem mbPengeluaran;
+    private javax.swing.JMenu mbProfil;
+    private javax.swing.JMenuItem mbWarga;
     private javax.swing.JPasswordField password_baru;
     private javax.swing.JPasswordField password_lama;
     private javax.swing.JTextField username_baru;

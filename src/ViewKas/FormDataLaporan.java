@@ -46,18 +46,18 @@ public class FormDataLaporan extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        mbProfil = new javax.swing.JMenu();
+        mbAkun = new javax.swing.JMenuItem();
+        mbKeluar = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        mbWarga = new javax.swing.JMenuItem();
+        mbPengeluaran = new javax.swing.JMenuItem();
+        mbLap = new javax.swing.JMenuItem();
+        mbAbout = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(191, 85, 236));
+        jPanel1.setBackground(new java.awt.Color(51, 153, 0));
 
         jLabel1.setFont(new java.awt.Font("Bookman Old Style", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -67,11 +67,11 @@ public class FormDataLaporan extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Pengeluaran Warga");
 
-        jLabel2.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Saldo Awal");
 
-        jLabel6.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Saldo Akhir");
 
@@ -85,7 +85,7 @@ public class FormDataLaporan extends javax.swing.JFrame {
 
         jButton2.setText("Cek");
 
-        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Periode");
 
@@ -135,7 +135,7 @@ public class FormDataLaporan extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable2);
 
-        jLabel4.setFont(new java.awt.Font("Bookman Old Style", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Iuran Penerimaan ");
 
@@ -204,36 +204,66 @@ public class FormDataLaporan extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jMenu2.setText("Profil");
+        mbProfil.setText("Profil");
 
-        jMenuItem3.setText("Ubah Akun");
-        jMenu2.add(jMenuItem3);
-
-        jMenuItem4.setText("Keluar");
-        jMenu2.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu1.setText("Menu");
-
-        jMenuItem6.setText("Warga");
-        jMenu1.add(jMenuItem6);
-
-        jMenuItem2.setText("Iuran");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+        mbAkun.setText("Ubah Akun");
+        mbAkun.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mbAkunMouseClicked(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        mbAkun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbAkunActionPerformed(evt);
+            }
+        });
+        mbProfil.add(mbAkun);
 
-        jMenuItem5.setText("Pengeluaran");
-        jMenu1.add(jMenuItem5);
+        mbKeluar.setText("Keluar");
+        mbKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbKeluarActionPerformed(evt);
+            }
+        });
+        mbProfil.add(mbKeluar);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(mbProfil);
 
-        jMenu3.setText("About");
-        jMenuBar1.add(jMenu3);
+        jMenu5.setText("Menu");
+
+        mbWarga.setText("Warga");
+        mbWarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbWargaActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mbWarga);
+
+        mbPengeluaran.setText("Pengeluaran");
+        mbPengeluaran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbPengeluaranActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mbPengeluaran);
+
+        mbLap.setText("Laporan A/T");
+        mbLap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbLapActionPerformed(evt);
+            }
+        });
+        jMenu5.add(mbLap);
+
+        jMenuBar1.add(jMenu5);
+
+        mbAbout.setText("About");
+        mbAbout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mbAboutMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(mbAbout);
 
         setJMenuBar(jMenuBar1);
 
@@ -253,13 +283,48 @@ public class FormDataLaporan extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void mbWargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbWargaActionPerformed
+        new FormDataWarga().setVisible(true);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_mbWargaActionPerformed
+
+    private void mbPengeluaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbPengeluaranActionPerformed
+        new FormDataPengeluaran().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mbPengeluaranActionPerformed
+
+    private void mbLapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbLapActionPerformed
+        // TODO add your handling code here:
+        new FormDataLaporan().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbLapActionPerformed
+
+    private void mbAboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mbAboutMouseClicked
+        // TODO add your handling code here:
+        new ViewKas.GUIAbout().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbAboutMouseClicked
+
+    private void mbAkunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mbAkunMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mbAkunMouseClicked
+
+    private void mbAkunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbAkunActionPerformed
+        // TODO add your handling code here:
+        new ViewKas.GUIAreaBendahara().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbAkunActionPerformed
+
+    private void mbKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbKeluarActionPerformed
+        // TODO add your handling code here:
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbKeluarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -307,15 +372,8 @@ public class FormDataLaporan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -323,5 +381,12 @@ public class FormDataLaporan extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JMenu mbAbout;
+    private javax.swing.JMenuItem mbAkun;
+    private javax.swing.JMenuItem mbKeluar;
+    private javax.swing.JMenuItem mbLap;
+    private javax.swing.JMenuItem mbPengeluaran;
+    private javax.swing.JMenu mbProfil;
+    private javax.swing.JMenuItem mbWarga;
     // End of variables declaration//GEN-END:variables
 }

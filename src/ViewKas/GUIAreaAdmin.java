@@ -35,13 +35,27 @@ public class GUIAreaAdmin extends javax.swing.JFrame {
         Kembali = new javax.swing.JButton();
         cari = new javax.swing.JButton();
         Simpan1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtCari1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mbProfil = new javax.swing.JMenu();
+        mbKeluar1 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        mbWarga = new javax.swing.JMenuItem();
+        mbPengeluaran = new javax.swing.JMenuItem();
+        mbLap1 = new javax.swing.JMenuItem();
+        mbAbout1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(51, 153, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Cari ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 50, 30));
+        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("AREA ADMIN");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 120, 30));
 
         jTableBendaharaInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -56,31 +70,123 @@ public class GUIAreaAdmin extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableBendaharaInfo);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 200));
-        jPanel1.add(txtCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 150, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, 200));
+        jPanel1.add(txtCari, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 150, -1));
 
         Kembali.setText("Kembali");
-        jPanel1.add(Kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
+        jPanel1.add(Kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
 
         cari.setText("Cari");
-        jPanel1.add(cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, -1, -1));
+        jPanel1.add(cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 70, -1));
 
         Simpan1.setText("Simpan");
-        jPanel1.add(Simpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
+        jPanel1.add(Simpan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Ubah Password");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 120, 30));
+        jPanel1.add(txtCari1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 150, -1));
+
+        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Cari ID");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 50, 30));
+
+        mbProfil.setText("Profil");
+
+        mbKeluar1.setText("Keluar");
+        mbKeluar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbKeluar1ActionPerformed(evt);
+            }
+        });
+        mbProfil.add(mbKeluar1);
+
+        jMenuBar1.add(mbProfil);
+
+        jMenu7.setText("Menu");
+
+        mbWarga.setText("Warga");
+        mbWarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbWargaActionPerformed(evt);
+            }
+        });
+        jMenu7.add(mbWarga);
+
+        mbPengeluaran.setText("Pengeluaran");
+        mbPengeluaran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbPengeluaranActionPerformed(evt);
+            }
+        });
+        jMenu7.add(mbPengeluaran);
+
+        mbLap1.setText("Laporan A/T");
+        mbLap1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mbLap1ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(mbLap1);
+
+        jMenuBar1.add(jMenu7);
+
+        mbAbout1.setText("About");
+        mbAbout1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mbAbout1MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(mbAbout1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mbAbout1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mbAbout1MouseClicked
+        // TODO add your handling code here:
+        new ViewKas.GUIAbout().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbAbout1MouseClicked
+
+    private void mbKeluar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbKeluar1ActionPerformed
+        // TODO add your handling code here:
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbKeluar1ActionPerformed
+
+    private void mbWargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbWargaActionPerformed
+        new viewKas.FormDataWarga().setVisible(true);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_mbWargaActionPerformed
+
+    private void mbPengeluaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbPengeluaranActionPerformed
+        new viewKas.FormDataPengeluaran().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mbPengeluaranActionPerformed
+
+    private void mbLap1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbLap1ActionPerformed
+        // TODO add your handling code here:
+        new viewKas.FormDataLaporan().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mbLap1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,9 +228,20 @@ public class GUIAreaAdmin extends javax.swing.JFrame {
     private javax.swing.JButton Simpan1;
     private javax.swing.JButton cari;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableBendaharaInfo;
+    private javax.swing.JMenu mbAbout1;
+    private javax.swing.JMenuItem mbKeluar1;
+    private javax.swing.JMenuItem mbLap1;
+    private javax.swing.JMenuItem mbPengeluaran;
+    private javax.swing.JMenu mbProfil;
+    private javax.swing.JMenuItem mbWarga;
     private javax.swing.JTextField txtCari;
+    private javax.swing.JTextField txtCari1;
     // End of variables declaration//GEN-END:variables
 }
